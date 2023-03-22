@@ -4,6 +4,9 @@ import instagramIcon from "../images/feature/Instagram_icon.webp";
 import logoBrand from "../../public/logo.svg";
 import { PRIVACY_URL, TERM_URL, IG_WEB_URL } from "../utils/const";
 import { AppStoreContainer } from "../styles";
+import VideoBox from "./videoBox";
+
+const videoArt = require("../images/video/art.mp4");
 
 export default function Footer() {
   return (
@@ -23,8 +26,7 @@ export default function Footer() {
         variant="outlined"
         sx={{
           border: "1px solid #52565F",
-          background:
-            "linear-gradient(180deg, rgba(75,75,75,1) 0%, rgba(0,0,0,1) 100%)",
+          backgroundColor: "#000",
           maxWidth: 80,
           width: "100%",
           borderRadius: "10px",
@@ -59,17 +61,10 @@ export default function Footer() {
       >
         <AppStoreContainer />
       </Box>
-      <Box
-        sx={{
-          margin: "0 auto",
-          position: "relative",
-          maxWidth: 300,
-          width: "100%",
-          height: "100%",
-          aspectRatio: "1",
-          backgroundColor: "#fff",
-        }}
-      />
+
+      <>
+        <VideoBox videoPath={videoArt} />
+      </>
       <FollowUs />
 
       <Divider variant="middle" sx={{ width: "40%" }} />
@@ -91,14 +86,14 @@ export default function Footer() {
 
 function LinkBox(props: { text: string; url: string }) {
   return (
-    <a href={props.url} target="_blank">
+    <a href={props.url} aria-label={props.text} target="_blank">
       <Typography
         variant="body1"
         gutterBottom
         sx={{
           fontWeight: 300,
           fontSize: "clamp(0.9rem, 2.5vw, 1rem)",
-          color: "grey.700",
+          color: "grey.400",
           "&:hover": {
             color: "grey.100",
             textDecoration: "underline",
@@ -122,8 +117,10 @@ function FollowUs() {
     >
       <a
         href={IG_WEB_URL}
+        aria-label="Vmagine link to instagram"
         target="_blank"
         style={{
+          textDecoration: "none",
           margin: "0 auto",
           display: "flex",
           flexDirection: "row",
@@ -160,6 +157,7 @@ function FollowUs() {
             sx={{
               fontWeight: 500,
               fontSize: "clamp(1rem, 2.5vw, 1rem)",
+              color: "#fff",
             }}
           >
             Follow us @aiart_vmagine
@@ -169,6 +167,7 @@ function FollowUs() {
             sx={{
               fontWeight: 200,
               fontSize: "clamp(0.7rem, 2.5vw, 0.7rem)",
+              color: "#fff",
             }}
           >
             Tag us on Instagram to show your works

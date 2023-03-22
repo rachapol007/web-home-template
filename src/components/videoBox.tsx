@@ -1,8 +1,13 @@
 import { useEffect, useRef } from "react";
-import { Box } from "@mui/material";
+import { Box, SxProps } from "@mui/material";
 
-export default function VideoBox(props: { videoPath: String }) {
-  const { videoPath } = props;
+export default function VideoBox(props: {
+  videoPath: String;
+  sx?: SxProps;
+  width?: String;
+  borderRadius?: String;
+}) {
+  const { videoPath, width, borderRadius, sx } = props;
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -22,7 +27,11 @@ export default function VideoBox(props: { videoPath: String }) {
           target.load();
           target.setAttribute(
             "style",
-            `opacity: 1; display: block; width: 100%;  margin: 0 auto;  height: 100%; border-radius: 10px;`
+            `opacity: 1; display: block; width: ${
+              width ?? "100%"
+            };  margin: 0 auto;  height: 100%; border-radius: ${
+              borderRadius ?? "10px"
+            };`
           );
           videoObserver.unobserve(video.target);
         }
@@ -33,10 +42,10 @@ export default function VideoBox(props: { videoPath: String }) {
     return () => {
       videoObserver.disconnect();
     };
-  }, []);
+  }, [width, borderRadius]);
 
   return (
-    <Box sx={{ maxWidth: 350, width: "100%", margin: "0 auto" }}>
+    <Box sx={{ maxWidth: 350, width: "100%", margin: "0 auto", ...sx }}>
       <Box
         sx={{
           position: "relative",

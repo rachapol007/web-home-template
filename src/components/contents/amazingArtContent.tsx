@@ -2,6 +2,8 @@ import { Box, Typography } from "@mui/material";
 import { TypographyGradient, WrapperFeature, CardContent } from "../../styles";
 import VideoBox from "../../components/videoBox";
 
+const videoPrompt = require("../../images/video/prompt.mp4");
+
 export default function AmazingArtContent() {
   return (
     <CardContent
@@ -21,7 +23,7 @@ export default function AmazingArtContent() {
               pl: ["0", "0", "40px", "40px"],
             }}
           >
-            <Typography variant="body1" gutterBottom sx={{ fontWeight: 200 }}>
+            <Typography variant="body2" gutterBottom>
               Turn <strong style={{ fontWeight: 600 }}>Prompt</strong> into
             </Typography>
 
@@ -33,17 +35,13 @@ export default function AmazingArtContent() {
             <Typography
               variant="body1"
               gutterBottom
-              sx={{ fontWeight: 100, fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)" }}
+              sx={{ fontWeight: 200, color: "grey.500" }}
             >
               We made it simple and fun for you to <br /> create high-quality AI
               Art.
             </Typography>
 
-            <Typography
-              variant="body1"
-              gutterBottom
-              sx={{ fontWeight: 300, fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)" }}
-            >
+            <Typography variant="body1" gutterBottom sx={{ fontWeight: 200 }}>
               Get inspired by our{" "}
               <strong style={{ fontWeight: 600 }}>prompt builder</strong> and
               <br />
@@ -56,7 +54,7 @@ export default function AmazingArtContent() {
         }
         secondChild={
           <>
-            <VideoBox videoPath={""} />
+            <VideoBox videoPath={videoPrompt} />
           </>
         }
       />

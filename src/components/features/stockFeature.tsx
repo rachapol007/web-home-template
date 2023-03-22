@@ -1,5 +1,8 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { TypographyGradient, WrapperFeature, CardContent } from "../../styles";
+import VideoBox from "../videoBox";
+
+const videoMega = require("../../images/video/mega.mp4");
 
 export default function StockFeature() {
   return (
@@ -28,18 +31,11 @@ export default function StockFeature() {
                 text="Mega Library"
                 linearGradient="linear-gradient(45deg, #F09819, #FFB458)"
               />
-              <Typography variant="body1" gutterBottom sx={{ fontWeight: 200 }}>
+              <Typography variant="body2" gutterBottom sx={{ fontWeight: 400 }}>
                 of free-stock contents
               </Typography>
 
-              <Typography
-                variant="body1"
-                gutterBottom
-                sx={{
-                  fontWeight: 100,
-                  fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
-                }}
-              >
+              <Typography variant="body1" gutterBottom sx={{}}>
                 We provide various content at your fingertips, including
                 backgrounds, photos, cutout stocks, elements, texts, and more.
                 for your unlimited creation
@@ -49,17 +45,7 @@ export default function StockFeature() {
         }
         secondChild={
           <>
-            <Box
-              sx={{
-                margin: "0 auto",
-                position: "relative",
-                maxWidth: 300,
-                width: "100%",
-                height: "100%",
-                aspectRatio: "1",
-                backgroundColor: "#fff",
-              }}
-            />
+            <VideoBox videoPath={videoMega} />
           </>
         }
       />

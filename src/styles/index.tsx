@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import downloadIosApp from "../images/feature/download_ios_app.webp";
 import { VMAGINE_APP_STORE } from "../utils/const";
 
-export function WrapperFeature(props: {
+function WrapperFeature(props: {
   firstChild: JSX.Element;
   secondChild: JSX.Element;
   sx?: SxProps;
@@ -44,7 +44,7 @@ export function WrapperFeature(props: {
   );
 }
 
-export function TypographyGradient(props: {
+function TypographyGradient(props: {
   text: string;
   linearGradient?: string;
   gutterBottom?: boolean | undefined;
@@ -72,7 +72,7 @@ export function TypographyGradient(props: {
   );
 }
 
-export function CardContent(props: {
+function CardContent(props: {
   children: JSX.Element | JSX.Element[];
   sx?: SxProps;
 }) {
@@ -101,13 +101,15 @@ const BoxWithLink = styled("a")({
   width: "100%",
   height: "100%",
   aspectRatio: "3",
+  textDecoration: "none",
 });
 
-export function AppStoreContainer(props: { sx?: SxProps }) {
+function AppStoreContainer(props: { sx?: SxProps }) {
   return (
     <>
       <BoxWithLink
         href={VMAGINE_APP_STORE}
+        aria-label="Vmagine link to instagram"
         sx={{
           ...props.sx,
         }}
@@ -115,11 +117,18 @@ export function AppStoreContainer(props: { sx?: SxProps }) {
         <ImageBox src={downloadIosApp} alt="" />
       </BoxWithLink>
       <Typography
-        variant="body2"
-        sx={{ pt: "5px", fontWeight: 200, color: "grey.200" }}
+        variant="caption"
+        sx={{
+          pt: "5px",
+          fontWeight: 200,
+          color: "grey.200",
+          fontSize: "clamp(1rem, 2.5vw, 1.1rem)",
+        }}
       >
         Download Free Today
       </Typography>
     </>
   );
 }
+
+export { WrapperFeature, TypographyGradient, CardContent, AppStoreContainer };

@@ -1,5 +1,8 @@
 import { Box, Card, Typography } from "@mui/material";
 import { TypographyGradient, WrapperFeature, CardContent } from "../../styles";
+import VideoBox from "../videoBox";
+
+const videoCompose = require("../../images/video/compose.mp4");
 
 export default function AIArtContent() {
   return (
@@ -24,7 +27,7 @@ export default function AIArtContent() {
         firstChild={
           <>
             <Box>
-              <Typography variant="body1" gutterBottom sx={{ fontWeight: 200 }}>
+              <Typography variant="body2" gutterBottom>
                 Turn <strong style={{ fontWeight: 600 }}>Image</strong> into
               </Typography>
 
@@ -37,8 +40,8 @@ export default function AIArtContent() {
                 variant="body1"
                 gutterBottom
                 sx={{
-                  fontWeight: 100,
-                  fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
+                  fontWeight: 300,
+                  color: "grey.500",
                 }}
               >
                 Compose any desired images with our complete editing tools and
@@ -51,7 +54,6 @@ export default function AIArtContent() {
                 gutterBottom
                 sx={{
                   fontWeight: 300,
-                  fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
                 }}
               >
                 Image colors and compositions will guide AI work. Giving you
@@ -62,17 +64,7 @@ export default function AIArtContent() {
         }
         secondChild={
           <>
-            <Box
-              sx={{
-                margin: "0 auto",
-                position: "relative",
-                maxWidth: 300,
-                width: "100%",
-                height: "100%",
-                aspectRatio: "1",
-                backgroundColor: "#fff",
-              }}
-            />
+            <VideoBox videoPath={videoCompose} />
           </>
         }
       />

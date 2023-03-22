@@ -70,8 +70,8 @@ export const theme = createTheme({
       lineHeight: 1.6,
     },
     subtitle1: {
-      fontSize: "1rem",
-      fontWeight: 400,
+      fontSize: "clamp(1.2rem, 2.5vw, 1.2rem)",
+      fontWeight: 200,
       lineHeight: 1.75,
     },
     subtitle2: {
@@ -82,12 +82,12 @@ export const theme = createTheme({
     body1: {
       // ***
       fontSize: "clamp(1rem, 2.5vw, 1.1rem)",
-      fontWeight: 400,
+      fontWeight: 200,
       lineHeight: 1.5,
     },
     body2: {
-      fontSize: "0.875rem",
-      fontWeight: 400,
+      fontSize: "clamp(1.2rem, 2.5vw, 1.2rem)",
+      fontWeight: 200,
       lineHeight: 1.43,
     },
 

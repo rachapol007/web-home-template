@@ -1,12 +1,8 @@
-import {
-  Box,
-  Card,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
+import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
 import { TypographyGradient, WrapperFeature, CardContent } from "../../styles";
+import VideoBox from "../videoBox";
+
+const videoAnimate = require("../../images/video/animate.mp4");
 
 export default function AnimatedFeature() {
   return (
@@ -27,27 +23,18 @@ export default function AnimatedFeature() {
               pl: [0, 0, "40px", "40px"],
             }}
           >
-            <Typography variant="body1" sx={{ fontWeight: 200 }}>
-              Create
-            </Typography>
+            <Typography variant="body2">Create</Typography>
 
             <TypographyGradient
               text="Animated"
               gutterBottom={false}
               linearGradient="linear-gradient(45deg, #F09819, #FFB458)"
             />
-            <Typography variant="body1" gutterBottom sx={{ fontWeight: 200 }}>
+            <Typography variant="body2" gutterBottom sx={{ fontWeight: 500 }}>
               AI Art
             </Typography>
 
-            <Typography
-              variant="body1"
-              gutterBottom
-              sx={{
-                fontWeight: 100,
-                fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
-              }}
-            >
+            <Typography variant="body1" gutterBottom>
               Animate your creation and bring it to life with
             </Typography>
 
@@ -71,17 +58,7 @@ export default function AnimatedFeature() {
         }
         secondChild={
           <>
-            <Box
-              sx={{
-                margin: "0 auto",
-                position: "relative",
-                maxWidth: 300,
-                width: "100%",
-                height: "100%",
-                aspectRatio: "1",
-                backgroundColor: "#fff",
-              }}
-            />
+            <VideoBox videoPath={videoAnimate} />
           </>
         }
       />

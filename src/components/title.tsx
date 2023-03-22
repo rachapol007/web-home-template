@@ -8,7 +8,7 @@ import fontIcon from "../images/feature/font_icon.webp";
 import starIcon from "../images/feature/star_icon.webp";
 import animateIcon from "../images/feature/animate_icon.webp";
 
-export function RecreateTitle() {
+export const RecreateTitle = () => {
   return (
     <>
       <Divider variant="middle" sx={{ mb: 3 }} />
@@ -33,6 +33,7 @@ export function RecreateTitle() {
         </CardIcon>
 
         <TypographyGradient
+          sx={{ fontSize: "clamp(2.2rem, 3vw, 2.4rem)" }}
           text="AI Recreate"
           linearGradient="linear-gradient(130deg, rgba(103,46,253,1) 0%, rgba(64,140,230,1) 70%, rgba(37,193,219,1) 100%)"
         />
@@ -40,8 +41,8 @@ export function RecreateTitle() {
           variant="body1"
           gutterBottom
           sx={{
-            fontWeight: 100,
-            fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
+            fontWeight: 200,
+            fontSize: "clamp(1.2rem, 2.5vw, 1.3rem)",
             color: "grey.400",
           }}
         >
@@ -53,9 +54,9 @@ export function RecreateTitle() {
       </Box>
     </>
   );
-}
+};
 
-export function FeatureTitle() {
+export const FeatureTitle = () => {
   const iconName = [cutIcon, shapeIcon, fontIcon, starIcon, animateIcon];
   return (
     <>
@@ -78,6 +79,7 @@ export function FeatureTitle() {
           sx={{
             fontWeight: 300,
             fontSize: "clamp(1.4rem, 3vw, 1.5rem)",
+            color: "#fff",
           }}
         >
           Other
@@ -92,7 +94,7 @@ export function FeatureTitle() {
           gutterBottom
           sx={{
             fontWeight: 100,
-            fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
+            fontSize: "clamp(1rem, 2.5vw, 1.1rem)",
             color: "grey.400",
           }}
         >
@@ -140,7 +142,7 @@ export function FeatureTitle() {
       </Box>
     </>
   );
-}
+};
 
 function CardIcon(props: {
   children: JSX.Element | JSX.Element[];

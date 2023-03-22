@@ -1,4 +1,5 @@
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -22,9 +23,9 @@ const toBase64 = (str: string) =>
 function ImageBox(props: { src: string | StaticImageData; alt: string }) {
   const { src, alt } = props;
   return (
-    <Image
+    <ExportedImage
       src={src}
-      loader={({ src }) => src}
+      // loader={({ src }) => src}
       unoptimized={true}
       placeholder="blur"
       blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}

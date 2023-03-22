@@ -14,7 +14,7 @@ import {
 } from "../components/features";
 import { FeatureTitle, RecreateTitle } from "../components/title";
 import Footer from "../components/footer";
-import Helmet from "../components/helmet";
+import SEO from "../components/SEO";
 
 function WrapperContainer(props: { children: JSX.Element; sx?: SxProps }) {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      <Helmet title="Vmagine AI Art generator" />
+      <SEO title="Vmagine AI Art generator" />
       <main className={styles.main}>
         <WrapperContainer sx={{ mt: 5 }}>
           <Banner />

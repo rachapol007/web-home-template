@@ -1,5 +1,8 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { TypographyGradient, WrapperFeature, CardContent } from "../../styles";
+import VideoBox from "../videoBox";
+
+const videoAdvance = require("../../images/video/advance.mp4");
 
 export default function AIArtOtherContent() {
   return (
@@ -24,7 +27,7 @@ export default function AIArtOtherContent() {
         firstChild={
           <>
             <Box>
-              <Typography variant="body1" gutterBottom sx={{ fontWeight: 200 }}>
+              <Typography variant="body2" gutterBottom>
                 Create <strong style={{ fontWeight: 600 }}>AI Art</strong>
               </Typography>
 
@@ -37,9 +40,9 @@ export default function AIArtOtherContent() {
                 }}
               >
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   gutterBottom
-                  sx={{ fontWeight: 200 }}
+                  sx={{ fontWeight: 500 }}
                 >
                   Like
                 </Typography>
@@ -48,14 +51,7 @@ export default function AIArtOtherContent() {
                   linearGradient="linear-gradient(45deg, #F09819, #FFB458)"
                 />
               </Box>
-              <Typography
-                variant="body1"
-                gutterBottom
-                sx={{
-                  fontWeight: 100,
-                  fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
-                }}
-              >
+              <Typography variant="body1" gutterBottom>
                 Go for more advanced image creation with AI Recreate and
                 complete editing tools
               </Typography>
@@ -64,17 +60,7 @@ export default function AIArtOtherContent() {
         }
         secondChild={
           <>
-            <Box
-              sx={{
-                margin: "0 auto",
-                position: "relative",
-                maxWidth: 300,
-                width: "100%",
-                height: "100%",
-                aspectRatio: "1",
-                backgroundColor: "#fff",
-              }}
-            />
+            <VideoBox videoPath={videoAdvance} />
           </>
         }
       />

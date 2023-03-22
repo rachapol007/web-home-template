@@ -1,5 +1,8 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { TypographyGradient, WrapperFeature, CardContent } from "../../styles";
+import RemoveBgAction from "../removeBg";
+import bgImage from "../../images/feature/bg_Image.webp";
+import removeImage from "../../images/feature/remove_bg.webp";
 
 export default function BGRemoveFeature() {
   return (
@@ -35,11 +38,7 @@ export default function BGRemoveFeature() {
               linearGradient="linear-gradient(45deg, #F09819, #FFB458)"
             />
 
-            <Typography
-              variant="body1"
-              gutterBottom
-              sx={{ fontWeight: 100, fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)" }}
-            >
+            <Typography variant="body1" gutterBottom>
               Automatically erase background
               <br />
               in a single tap
@@ -48,16 +47,9 @@ export default function BGRemoveFeature() {
         }
         secondChild={
           <>
-            <Box
-              sx={{
-                margin: "0 auto",
-                position: "relative",
-                maxWidth: 300,
-                width: "100%",
-                height: "100%",
-                aspectRatio: "1",
-                backgroundColor: "#fff",
-              }}
+            <RemoveBgAction
+              imageForeground={removeImage}
+              imageBackground={bgImage}
             />
           </>
         }
